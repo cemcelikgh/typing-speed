@@ -1,0 +1,414 @@
+:root {
+  --background: #ffffff;  /* background */
+  --foreground: #171717;  /* foreground */
+  --colour-one: #666666;  /* theme selector icon */
+  --colour-two: #171717;  /* selected theme selector icon */
+  --color-thre: #ebebeb;  /* theme selector icon circle background */
+  --color-four: #adadad;  /* reset icon fill */
+  --color-five: #e7e7e7;  /* focused word background */
+  --colour-six: #009900;  /* correct word */
+  --color-seve: #00e600;  /* partially correct word */
+  --color-eigh: #ff0000;  /* incorrect word */
+  --color-nine: #ff9999;  /* partially incorrect word */
+  --border-one: 1rem solid #ebebeb; /* container borders */
+  --border-two: 1rem solid #dbdbdb; /* tool panel borders */
+  --scroll-col: #666666 #ffffff;  /* scrollbar thumb and track */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;  /* background */
+    --foreground: #ededed;  /* foreground */
+    --colour-one: #a1a1a1;  /* theme selector icon */
+    --colour-two: #eeeeee;  /* selected theme selector icon */
+    --color-thre: #454545;  /* theme selector icon circle background */
+    --color-four: #808080;  /* reset icon fill */
+    --color-five: #282828;  /* focused word background */
+    --colour-six: #009900;  /* correct word */
+    --color-seve: #006600;  /* partially correct word */
+    --color-eigh: #cc0000;  /* incorrect word */
+    --color-nine: #990000;  /* partially incorrect word */
+    --border-one: 1rem solid #454545; /* container borders */
+    --border-two: 1rem solid #454545; /* tool panel borders */
+    --scroll-col: #a1a1a1 #0a0a0a;  /* scrollbar thumb and track */
+  }
+}
+
+@media (prefers-color-scheme: blue) {
+  :root {
+    --background: #2251dd;  /* background */
+    --foreground: #e9eefc;  /* foreground */
+    --colour-one: #7b97ea;  /* theme selector icon */
+    --colour-two: #ffffff;  /* selected theme selector icon */
+    --color-thre: #4f74e3;  /* theme selector icon circle background */
+    --color-four: #6585e7;  /* reset icon fill */
+    --color-five: #1c41b0;  /* focused word background */
+    --colour-six: #00e600;  /* correct word */
+    --color-seve: #00b300;  /* partially correct word */
+    --color-eigh: #ff8080;  /* incorrect word */
+    --color-nine: #ff4d4d;  /* partially incorrect word */
+    --border-one: 1rem solid #4f74e3; /* container borders */
+    --border-two: 1rem solid #3862e0; /* tool panel borders */
+    --scroll-col: #7b97ea #2251dd;  /* scrollbar thumb and track */
+  }
+}
+
+@media (prefers-color-scheme: green) {
+  :root {
+    --background: #445f08;  /* background */
+    --foreground: #edf2F4;  /* foreground */
+    --colour-one: #75a40e;  /* theme selector icon */
+    --colour-two: #f6fde8;  /* selected theme selector icon */
+    --color-thre: #53750a;  /* theme selector icon circle background */
+    --color-four: #53750a;  /* reset icon fill */
+    --color-five: #324606;  /* focused word background */
+    --colour-six: #00cc00;  /* correct word */
+    --color-seve: #009900;  /* partially correct word */
+    --color-eigh: #ff6666;  /* incorrect word */
+    --color-nine: #ff3333;  /* partially incorrect word */
+    --border-one: 1rem solid #53750a; /* container borders */
+    --border-two: 1rem solid #53750a; /* tool panel borders */
+    --scroll-col: #75a40e #445f08;  /* scrollbar thumb and track */
+  }
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  color-scheme: light dark green blue;
+  font-size: 6.25%;
+  height: 100%;
+  scrollbar-color: var(--scroll-col);
+}
+
+.light {
+  --background: #ffffff;  /* background */
+  --foreground: #171717;  /* foreground */
+  --colour-one: #666666;  /* theme selector icon */
+  --colour-two: #171717;  /* selected theme selector icon */
+  --color-thre: #ebebeb;  /* theme selector icon circle background */
+  --color-four: #adadad;  /* reset icon fill */
+  --color-five: #e7e7e7;  /* focused word background */
+  --colour-six: #009900;  /* correct word */
+  --color-seve: #00e600;  /* partially correct word */
+  --color-eigh: #ff0000;  /* incorrect word */
+  --color-nine: #ff9999;  /* partially incorrect word */
+  --border-one: 1rem solid #ebebeb; /* container borders */
+  --border-two: 1rem solid #dbdbdb; /* tool panel borders */
+  --scroll-col: #666666 #ffffff;  /* scrollbar thumb and track */
+}
+
+.dark {
+  --background: #0a0a0a;  /* background */
+  --foreground: #ededed;  /* foreground */
+  --colour-one: #a1a1a1;  /* theme selector icon */
+  --colour-two: #eeeeee;  /* selected theme selector icon */
+  --color-thre: #454545;  /* theme selector icon circle background */
+  --color-four: #808080;  /* reset icon fill */
+  --color-five: #282828;  /* focused word background */
+  --colour-six: #009900;  /* correct word */
+  --color-seve: #006600;  /* partially correct word */
+  --color-eigh: #cc0000;  /* incorrect word */
+  --color-nine: #990000;  /* partially incorrect word */
+  --border-one: 1rem solid #454545; /* container borders */
+  --border-two: 1rem solid #454545; /* tool panel borders */
+  --scroll-col: #a1a1a1 #0a0a0a;  /* scrollbar thumb and track */
+}
+
+.blue {
+  --background: #2251dd;  /* background */
+  --foreground: #e9eefc;  /* foreground */
+  --colour-one: #7b97ea;  /* theme selector icon */
+  --colour-two: #ffffff;  /* selected theme selector icon */
+  --color-thre: #4f74e3;  /* theme selector icon circle background */
+  --color-four: #6585e7;  /* reset icon fill */
+  --color-five: #1c41b0;  /* focused word background */
+  --colour-six: #00e600;  /* correct word */
+  --color-seve: #00b300;  /* partially correct word */
+  --color-eigh: #ff8080;  /* incorrect word */
+  --color-nine: #ff4d4d;  /* partially incorrect word */
+  --border-one: 1rem solid #4f74e3; /* container borders */
+  --border-two: 1rem solid #3862e0; /* tool panel borders */
+  --scroll-col: #7b97ea #2251dd;  /* scrollbar thumb and track */
+}
+
+.green {
+  --background: #445f08;  /* background */
+  --foreground: #edf2F4;  /* foreground */
+  --colour-one: #75a40e;  /* theme selector icon */
+  --colour-two: #f6fde8;  /* selected theme selector icon */
+  --color-thre: #53750a;  /* theme selector icon circle background */
+  --color-four: #53750a;  /* reset icon fill */
+  --color-five: #324606;  /* focused word background */
+  --colour-six: #00cc00;  /* correct word */
+  --color-seve: #009900;  /* partially correct word */
+  --color-eigh: #ff6666;  /* incorrect word */
+  --color-nine: #ff3333;  /* partially incorrect word */
+  --border-one: 1rem solid #53750a; /* container borders */
+  --border-two: 1rem solid #53750a; /* tool panel borders */
+  --scroll-col: #75a40e #445f08;  /* scrollbar thumb and track */
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+main {
+  margin: 0 auto;
+  width: 720rem;
+  color: var(--foreground);
+  background: var(--background);
+}
+
+h1 {
+  margin: 50rem auto;
+  text-align: center;
+  font-size: 36rem;
+}
+
+#selectors {
+  padding: 5rem 20rem;
+  border: var(--border-one);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#language-selector {
+  height: 30rem;
+  padding-left: 3rem;
+  background-color: var(--background);
+  color: var(--foreground);
+  border: var(--border-one);
+  border-radius: 3rem;
+  font-size: medium;
+  cursor: pointer;
+}
+
+#language-selector:focus-visible {
+  outline: none;
+}
+
+.theme-switcher {
+  width: 184rem;
+  height: 40rem;
+  border: var(--border-one);
+  border-radius: 100rem;
+  position: relative
+}
+
+.switch {
+  position: absolute;
+  top: 3rem;
+  width: 32rem;
+  height: 32rem;
+  padding: 8rem;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.green-switch {
+  left: 3rem;
+}
+
+.blue-switch {
+  left: 38rem;
+}
+
+#arc-border {
+  position: absolute;
+  right: 69rem;
+  top: -1rem;
+  height: 40rem;
+  width: 40rem;
+  border: var(--border-one);
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+  border-right: none;
+  z-index: 1;
+}
+
+.light-switch {
+  right: 73rem;
+  z-index: 2;
+}
+
+.system-switch {
+  right: 38rem;
+}
+
+.dark-switch {
+  right: 3rem;
+}
+
+.switch-icon {
+  width: 16rem;
+  height: 16rem;
+  fill: var(--colour-one);
+}
+
+input:checked + .switch-icon {
+  fill: var(--colour-two);
+}
+
+.switch:has(input:checked) {
+  background-color: var(--color-thre);
+}
+
+.option {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  position: absolute;
+}
+
+#panel {
+  height: 44rem;
+  margin-top: 20rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10rem;
+  border: var(--border-one);
+}
+
+#typing-input {
+  width: 50%;
+  height: 34rem;
+  padding-left: 10rem;
+  font-size: 20rem;
+  color: var(--foreground);
+  appearance: none;
+  border: var(--border-two);
+  background-color: var(--color-five);
+}
+
+#typing-input:focus-visible {
+  appearance: none;
+  outline: none;
+}
+
+#timer {
+  width: 64rem;
+  height: 34rem;
+  font-size: 18rem;
+  text-align: center;
+  line-height: 34rem;
+  color: var(--foreground);
+  border: var(--border-two);
+  background-color: var(--color-five);
+  cursor: default;
+}
+
+#reset {
+  width: 34rem;
+  height: 34rem;
+  padding: 1rem;
+  border: var(--border-two);
+  background-color: var(--color-five);
+  cursor: pointer;
+}
+
+#reset-icon {
+  width: 30rem;
+  height: 30rem;
+  fill: var(--color-four);
+}
+
+#wpm-result {
+  height: 70rem;
+  margin-top: 10rem;
+  padding-top: 10rem;
+  border: var(--border-one);
+  border-bottom: none;
+  text-align: center;
+}
+
+.wpm {
+  font-size: 32rem;
+}
+
+.words-per-minute {
+  margin-top: 5rem;
+  font-size: 12rem;
+}
+
+.correct-typing {
+  color: var(--colour-six);
+}
+
+#typing-results {
+  height: 45rem;
+  font-size: 18rem;
+  border: var(--border-one);
+  border-top: none;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.failure-typing {
+  color: var(--color-eigh);
+}
+
+#words {
+  height: 86rem;
+  margin-top: 10rem;
+  padding: 10rem;
+  display: flex;
+  flex-wrap: wrap;
+  overflow-y: hidden;
+  border: var(--border-one);
+}
+
+#words.typed-words {
+  height: auto;
+}
+
+.word {
+  height: 33rem;
+  padding: 5rem;
+  font-size: 20rem;
+  color: var(--foreground);
+}
+
+.focused {
+  background-color: var(--color-five);
+}
+
+.word.success {
+  color: var(--colour-six);
+}
+
+.word.inc-suc {
+  color: var(--color-seve);
+}
+
+.word.failure {
+  color: var(--color-eigh);
+}
+
+.word.inc-fai {
+  color: var(--color-nine);
+}
+
+.word.no-disp {
+  display: none;
+}
