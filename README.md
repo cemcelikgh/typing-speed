@@ -5,4 +5,4 @@ Patika Intermediate Frontend Web Development Path Certification Task
 
 Display: <https://words-per-minute.netlify.app/>
 
-[![Typing Speed Preview](./public/images/ui-preview/themes.png "Display Typing Speed")](https://words-per-minute.netlify.app/)
+[![Typing Speed Preview](./public/images/ui-previews/themes.png "Display Typing Speed")](https://words-per-minute.netlify.app/)

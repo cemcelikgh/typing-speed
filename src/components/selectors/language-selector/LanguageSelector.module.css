@@ -1,0 +1,14 @@
+.language-selector {
+  height: 30rem;
+  padding-left: 3rem;
+  background-color: var(--background);
+  color: var(--foreground);
+  border: var(--container-borders);
+  border-radius: 3rem;
+  font-size: medium;
+  cursor: pointer;
+}
+
+.language-selector:focus-visible {
+  outline: none;
+}

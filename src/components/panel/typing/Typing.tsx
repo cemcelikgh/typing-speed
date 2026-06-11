@@ -8,6 +8,8 @@ import { selectEntities, selectIds, setRemainedWords, setWord }
   from "@/lib/features/wordsSlice";
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 import { ChangeEvent, useEffect, useRef, useState } from "react";
+import styles from './Typing.module.css';
+import wordStyles from '@/components/words/word/Word.module.css';
 
 function Typing() {
 
@@ -38,15 +40,15 @@ function Typing() {
       effectiveKeystrokes.current = 0;
       focusedWordIndex.current = 0;
       if (isReadOnly) {
-        if (focusedWord.status === 'focused') {
+        if (focusedWord.status === wordStyles.focused) {
           if (inputValue.length > 0) {
-            dispatch(setWord({ id: focusedWord.id, status: 'inc-suc' }));
+            dispatch(setWord({ id: focusedWord.id, status: wordStyles['inc-suc'] }));
           } else {
-            dispatch(setWord({ id: focusedWord.id, status: 'no-disp' }));
+            dispatch(setWord({ id: focusedWord.id, status: wordStyles['no-disp'] }));
           }
         }
-        if (focusedWord.status === 'failure') {
-          dispatch(setWord({ id: focusedWord.id, status: 'inc-fai' }));
+        if (focusedWord.status === wordStyles.failure) {
+          dispatch(setWord({ id: focusedWord.id, status: wordStyles['inc-fai'] }));
         }
       }
     }
@@ -72,29 +74,29 @@ function Typing() {
     const tVL = typedValue.length;
 
     if (typedValue.slice(0, tVL) === focusedWord.word.slice(0, tVL)) {
-      if (focusedWord.status === 'failure') {
-        dispatch(setWord({ id: focusedWord.id, status: 'focused' }));
+      if (focusedWord.status === wordStyles.failure) {
+        dispatch(setWord({ id: focusedWord.id, status: wordStyles.focused }));
       }
     } else {
-      dispatch(setWord({ id: focusedWord.id, status: 'failure' }));
+      dispatch(setWord({ id: focusedWord.id, status: wordStyles.failure }));
     }
 
     if (/ $/.test(typedValue)) {
       if (typedValue.slice(0, -1) === focusedWord.word) {
-        dispatch(setWord({ id: focusedWord.id, status: 'success' }));
+        dispatch(setWord({ id: focusedWord.id, status: wordStyles.success }));
         focusedWordIndex.current++;
         correctWords.current++;
         effectiveKeystrokes.current += focusedWord.word.length + 1;
       } else {
-        dispatch(setWord({ id: focusedWord.id, status: 'failure' }));
+        dispatch(setWord({ id: focusedWord.id, status: wordStyles.failure }));
         focusedWordIndex.current++;
         wrongWords.current++;
       }
       const nextFocusedWord = entities[ids[focusedWordIndex.current]];
-      dispatch(setWord({ id: nextFocusedWord.id, status: 'focused' }));
+      dispatch(setWord({ id: nextFocusedWord.id, status: wordStyles.focused }));
       setInputValue('');
 
-      const divs = document.querySelectorAll<HTMLDivElement>('.word');
+      const divs = document.querySelectorAll<HTMLDivElement>('.' + wordStyles.word);
       const firstRowTop = divs[0].offsetTop;
       const firstRowDivs = [...divs].filter(div => div.offsetTop === firstRowTop);
       if (focusedWord.id === firstRowDivs.at(-1)?.id) {
@@ -105,7 +107,8 @@ function Typing() {
   }
 
   return (
-    <input id="typing-input"
+    <input className={styles['typing-input']}
+      name='typing-input'
       type="text"
       autoComplete='off'
       spellCheck='false'

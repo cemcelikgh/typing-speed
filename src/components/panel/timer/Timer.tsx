@@ -6,6 +6,7 @@ import { selectIsStart, selectReset, setIsReadOnly, setIsStart, setReset }
   from "@/lib/features/controlSlice";
 import { setCompletedWords } from "@/lib/features/wordsSlice";
 import { selectLanguage } from "@/lib/features/languageSlice";
+import styles from './Timer.module.css';
 
 function Timer() {
 
@@ -62,7 +63,7 @@ function Timer() {
   }, [reset, dispatch]);
 
   return (
-    <div id="timer" title={language === 'english' ? 'Timer' : 'Kronometre'}>
+    <div className={styles.timer} title={language === 'english' ? 'Timer' : 'Kronometre'}>
       { seconds === 60 ? '01:00'
       : seconds > 9 ? '00:' + seconds
       : `00:0${seconds}`}

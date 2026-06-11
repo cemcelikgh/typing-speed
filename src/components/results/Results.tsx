@@ -4,7 +4,7 @@ import { selectIsReadOnly } from "@/lib/features/controlSlice";
 import { selectLanguage } from "@/lib/features/languageSlice";
 import { selectResults } from "@/lib/features/resultsSlice";
 import { useAppSelector } from "@/lib/hooks";
-
+import styles from './Results.module.css';
 
 function Results() {
 
@@ -16,28 +16,28 @@ function Results() {
   const wpm = Math.round(effKey / 5);
 
   return (isReadOnly &&
-    <div id='results'>
-      <div id="wpm-result">
+    <section className={styles.results}>
+      <div className={styles["wpm-result"]}>
         {isEn ? <>
-        <div className="wpm correct-typing">{wpm} WPM</div>
-        <div className="words-per-minute">{wpm} Words Per Minute</div>
+        <div className={`${styles.wpm} ${styles["correct-typing"]}`}>{wpm} WPM</div>
+        <div className={styles["words-per-minute"]}>{wpm} Words Per Minute</div>
         </> : <>
-        <div className="wpm correct-typing">Dakikada {wpm} Kelime</div>
-        <div className="words-per-minute">{wpm} WPM</div>
+        <div className={`${styles.wpm} ${styles["correct-typing"]}`}>Dakikada {wpm} Kelime</div>
+        <div className={styles["words-per-minute"]}>{wpm} WPM</div>
         </>}
       </div>
-      <div id="typing-results">
+      <div className={styles["typing-results"]}>
         <div>
-          {isEn ? 'Correct Words: ' : 'Doğru Kelime: '}<span className='correct-typing'>{results.correctWords}</span>
+          {isEn ? 'Correct Words: ' : 'Doğru Kelime: '}<span className={styles["correct-typing"]}>{results.correctWords}</span>
         </div>
         <div>
-          {isEn ? 'Wrong Words: ' : 'Yanlış Kelime: '}<span className="failure-typing">{results.wrongWords}</span>
+          {isEn ? 'Wrong Words: ' : 'Yanlış Kelime: '}<span className={styles["failure-typing"]}>{results.wrongWords}</span>
         </div>
         <div>
-          {isEn ? 'Effective Keystrokes: ' : 'Faydalı Tuşlama: '}<span className='correct-typing'>{effKey}</span>
+          {isEn ? 'Effective Keystrokes: ' : 'Faydalı Tuşlama: '}<span className={styles["correct-typing"]}>{effKey}</span>
         </div>
       </div>
-    </div>
+    </section>
   );
 
 }

@@ -1,0 +1,13 @@
+.words {
+  height: 86rem;
+  margin-top: 10rem;
+  padding: 10rem;
+  display: flex;
+  flex-wrap: wrap;
+  overflow-y: hidden;
+  border: var(--container-borders);
+}
+
+.words.typed-words {
+  height: auto;
+}

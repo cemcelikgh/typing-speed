@@ -5,6 +5,7 @@ import { useAppSelector } from "@/lib/hooks";
 import useShuffleWords from "@/hooks/use-shuffle-words/useShuffleWords";
 import Word from './word/Word';
 import { selectIsReadOnly } from "@/lib/features/controlSlice";
+import styles from './Words.module.css';
 
 function Words() {
   
@@ -14,7 +15,7 @@ function Words() {
   const isReadOnly = useAppSelector(selectIsReadOnly);
 
   return (
-    <section id="words" className={isReadOnly ? 'typed-words': undefined}>
+    <section className={`${styles.words}${isReadOnly ? ' ' + styles['typed-words'] : ''}`}>
       {ids.map(id => <Word id={id} key={id} />)}
     </section>
   );

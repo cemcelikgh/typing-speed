@@ -1,0 +1,39 @@
+.results {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.wpm-result {
+  height: 70rem;
+  margin-top: 10rem;
+  padding-top: 10rem;
+  border: var(--container-borders);
+  border-bottom: none;
+  text-align: center;
+}
+
+.wpm {
+  font-size: 32rem;
+}
+
+.words-per-minute {
+  margin-top: 5rem;
+  font-size: 12rem;
+}
+
+.typing-results {
+  height: 45rem;
+  font-size: 18rem;
+  border: var(--container-borders);
+  border-top: none;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.correct-typing {
+  color: var(--correct-word);
+}
+
+.failure-typing {
+  color: var(--incorrect-word);
+}

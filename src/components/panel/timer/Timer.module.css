@@ -1,0 +1,11 @@
+.timer {
+  width: 64rem;
+  height: 34rem;
+  font-size: 18rem;
+  text-align: center;
+  line-height: 34rem;
+  color: var(--foreground);
+  border: var(--tool-panel-borders);
+  background-color: var(--focused-word-background);
+  cursor: default;
+}

@@ -4,10 +4,11 @@ import { RootState } from "../store";
 import type { EntityState } from "@reduxjs/toolkit";
 import { wordsAdapter } from "@/utils/wordsAdapter";
 import { Word } from "@/types/types";
+import wordStyles from '@/components/words/word/Word.module.css';
 
 interface WordStatus {
   id: string;
-  status: 'in-line' | 'focused' | 'success' | 'failure' | 'inc-suc' | 'inc-fai' | 'no-disp';
+  status: string;
 }
 
 const initialState = wordsAdapter.getInitialState();
@@ -27,10 +28,10 @@ const wordsSlice = createSlice({
       const remainedWords = state.ids.reduce<Word[]>((acc, id) => {
         const entity = state.entities[id];
         const status = entity.status;
-        if (status !== 'in-line') {
+        if (status !== wordStyles['in-line']) {
           acc.push({
             ...entity,
-            display: status !== 'focused' ? false : true,
+            display: status !== wordStyles.focused ? false : true,
           });
         } else acc.push(entity);
         return acc;
@@ -40,7 +41,7 @@ const wordsSlice = createSlice({
     setCompletedWords: state => {
       const completedWords = state.ids.reduce<Word[]>((acc, id) => {
         const entity = state.entities[id];
-        if (entity.status !== 'in-line') {
+        if (entity.status !== wordStyles['in-line']) {
           acc.push({
             ...entity,
             display: true,

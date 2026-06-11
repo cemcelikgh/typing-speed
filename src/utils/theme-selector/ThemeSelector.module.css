@@ -1,0 +1,72 @@
+.theme-switcher {
+  width: 184rem;
+  height: 40rem;
+  border: var(--container-borders);
+  border-radius: 100rem;
+  position: relative
+}
+
+.switch {
+  position: absolute;
+  top: 3rem;
+  width: 32rem;
+  height: 32rem;
+  padding: 8rem;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.green-switch {
+  left: 3rem;
+}
+
+.blue-switch {
+  left: 38rem;
+}
+
+.arc-border {
+  position: absolute;
+  right: 69rem;
+  top: -1rem;
+  height: 40rem;
+  width: 40rem;
+  border: var(--container-borders);
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+  border-right: none;
+  z-index: 1;
+}
+
+.light-switch {
+  right: 73rem;
+  z-index: 2;
+}
+
+.system-switch {
+  right: 38rem;
+}
+
+.dark-switch {
+  right: 3rem;
+}
+
+.switch-icon {
+  width: 16rem;
+  height: 16rem;
+  fill: var(--theme-selector-icon);
+}
+
+input:checked + .switch-icon {
+  fill: var(--selected-theme-selector-icon);
+}
+
+.switch:has(input:checked) {
+  background-color: var(--theme-selector-icon-circle-background);
+}
+
+.option {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  position: absolute;
+}

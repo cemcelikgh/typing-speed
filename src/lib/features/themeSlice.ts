@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import type { RootState } from "../store";
 import { Theme } from "@/types/types";
 
-const initialState: { mode: Theme } = { mode: undefined };
+const initialState: { mode: Theme | undefined } = { mode: undefined }
 
 export const themeSlice = createSlice({
   name: 'theme',

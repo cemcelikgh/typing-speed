@@ -3,6 +3,7 @@
 import { selectLanguage } from "@/lib/features/languageSlice";
 import { selectTheme } from "@/lib/features/themeSlice";
 import { useAppSelector } from "@/lib/hooks";
+import styles from './Html.module.css';
 
 function Html({
   children,
@@ -21,11 +22,11 @@ function Html({
       <head>
         <title>{title}</title>
         {theme &&
-        <link rel="icon" href={`/images/theme-icon/${theme}.svg`} type="image/svg+xml" />}
+        <link rel="icon" href={`/images/theme-icons/${theme}-keyboard.svg`} type="image/svg+xml" />}
       </head>
       <body>
-        <main>
-          <h1>{title}</h1>
+        <main className={styles.main}>
+          <h1 className={styles.heading}>{title}</h1>
           {children}
         </main>
       </body>

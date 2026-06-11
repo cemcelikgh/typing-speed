@@ -1,0 +1,14 @@
+.reset {
+  width: 34rem;
+  height: 34rem;
+  padding: 1rem;
+  border: var(--tool-panel-borders);
+  background-color: var(--focused-word-background);
+  cursor: pointer;
+}
+
+.reset-icon {
+  width: 30rem;
+  height: 30rem;
+  fill: var(--reset-icon-fill);
+}

@@ -1,0 +1,7 @@
+.selectors {
+  padding: 5rem 20rem;
+  border: var(--container-borders);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

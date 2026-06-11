@@ -3,6 +3,7 @@
 import { selectLanguage, setLanguage } from "@/lib/features/languageSlice";
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 import { ChangeEvent } from "react";
+import styles from './LanguageSelector.module.css';
 
 function LanguageSelector() {
 
@@ -16,7 +17,9 @@ function LanguageSelector() {
   }
 
   return (
-    <select id="language-selector" value={language} onChange={handleLang}>
+    <select className={styles['language-selector']} name="language-selector"
+      value={language} onChange={handleLang}
+    >
       <option key='1' value='english'>English</option>
       <option key='2' value='turkish'>Türkçe</option>
     </select>

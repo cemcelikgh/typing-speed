@@ -10,6 +10,7 @@ import SunSolid from './icons/SunSolid';
 import SkyatlasSolid from './icons/SkyatlasSolid';
 import LeafSolid from './icons/LeafSolid';
 import { selectLanguage } from '@/lib/features/languageSlice';
+import styles from './ThemeSelector.module.css';
 
 function ThemeSelector() {
 
@@ -45,24 +46,24 @@ function ThemeSelector() {
   }
 
   return (
-    <fieldset className='theme-switcher'>
-      <label htmlFor='set-green-theme' className='switch green-switch'
+    <fieldset className={styles['theme-switcher']}>
+      <label htmlFor='set-green-theme' className={`${styles.switch} ${styles['green-switch']}`}
         title={language === 'english' ? 'Green Theme' : 'Yeşil Tema'}
       >
         <input type="radio" name="theme" value='green'
-          id="set-green-theme" className='option'
+          id="set-green-theme" className={styles.option}
           checked={check[0]}
           onChange={() => {
             handleSetTheme('green');
             setCheck([true, false, false, false, false]);
           }}
         />
-        <LeafSolid className='switch-icon' />
+        <LeafSolid className={styles['switch-icon']} />
       </label>
-      <label htmlFor='set-blue-theme' className='switch blue-switch'
+      <label htmlFor='set-blue-theme' className={`${styles.switch} ${styles['blue-switch']}`}
         title={language === 'english' ? 'Blue Theme' : 'Mavi Tema'}
       >
-        <input id="set-blue-theme" className='option'
+        <input id="set-blue-theme" className={styles.option}
           type="radio" name="theme" value='blue'
           checked={check[1]}
           onChange={() => {
@@ -70,13 +71,13 @@ function ThemeSelector() {
             setCheck([false, true, false, false, false]);
           }}
         />
-        <SkyatlasSolid className='switch-icon' />
+        <SkyatlasSolid className={styles['switch-icon']} />
       </label>
-      <div id='arc-border'></div>
-      <label htmlFor='set-light-theme' className='switch light-switch'
+      <div className={styles['arc-border']}></div>
+      <label htmlFor='set-light-theme' className={`${styles.switch} ${styles['light-switch']}`}
         title={language === 'english' ? 'Light Theme' : 'Açık Tema'}
       >
-        <input id="set-light-theme" className='option'
+        <input id="set-light-theme" className={styles.option}
           type="radio" name="theme" value='light'
           checked={check[2]}
           onChange={() => {
@@ -84,12 +85,12 @@ function ThemeSelector() {
             setCheck([false, false, true, false, false]);
           }}
         />
-        <SunSolid className='switch-icon' />
+        <SunSolid className={styles['switch-icon']} />
       </label>
-      <label htmlFor='set-system-theme' className='switch system-switch'
+      <label htmlFor='set-system-theme' className={`${styles.switch} ${styles['system-switch']}`}
         title={language === 'english' ? 'System Theme' : 'Sistem Teması'}
       >
-        <input id="set-system-theme" className='option'
+        <input id="set-system-theme" className={styles.option}
           type="radio" name="theme" value='system'
           checked={check[3]}
           onChange={() => {
@@ -97,12 +98,12 @@ function ThemeSelector() {
             setCheck([false, false, false, true, false]);
           }}
         />
-        <DisplaySolid className='switch-icon' />
+        <DisplaySolid className={styles['switch-icon']} />
       </label>
-      <label htmlFor='set-dark-theme' className='switch dark-switch'
+      <label htmlFor='set-dark-theme' className={`${styles.switch} ${styles['dark-switch']}`}
         title={language === 'english' ? 'Dark Theme' : 'Koyu Tema'}
       >
-        <input id="set-dark-theme" className='option'
+        <input id="set-dark-theme" className={styles.option}
           type="radio" name="theme" value='dark'
           checked={check[4]}
           onChange={() => {
@@ -110,7 +111,7 @@ function ThemeSelector() {
             setCheck([false, false, false, false, true]);
           }}
         />
-        <MoonSolid className='switch-icon' />
+        <MoonSolid className={styles['switch-icon']} />
       </label>
     </fieldset>
   );

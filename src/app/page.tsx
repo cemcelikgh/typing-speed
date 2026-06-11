@@ -3,7 +3,6 @@ import Results from "@/components/results/Results";
 import Selectors from "@/components/selectors/Selectors";
 import Words from "@/components/words/Words";
 
-
 function Home() {
   return <>
     <Selectors />

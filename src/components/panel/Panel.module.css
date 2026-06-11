@@ -1,0 +1,9 @@
+.panel {
+  height: 44rem;
+  margin-top: 20rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10rem;
+  border: var(--container-borders);
+}

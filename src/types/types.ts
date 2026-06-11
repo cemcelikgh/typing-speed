@@ -1,4 +1,4 @@
-export type Theme = 'green' | 'blue' | 'light' | undefined | 'dark';
+export type Theme = 'green' | 'blue' | 'light' | 'dark';
 
 export interface Word {
   word: string;

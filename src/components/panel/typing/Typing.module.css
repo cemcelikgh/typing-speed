@@ -1,0 +1,15 @@
+.typing-input {
+  width: 50%;
+  height: 34rem;
+  padding-left: 10rem;
+  font-size: 20rem;
+  color: var(--foreground);
+  appearance: none;
+  border: var(--tool-panel-borders);
+  background-color: var(--focused-word-background);
+}
+
+.typing-input:focus-visible {
+  appearance: none;
+  outline: none;
+}
