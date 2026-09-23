@@ -5,4 +5,4 @@ export interface Word {
   id: string;
   status: string;
   display: boolean;
-};
+}

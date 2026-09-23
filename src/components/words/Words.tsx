@@ -1,14 +1,14 @@
 'use client';
 
 import { selectIds } from "@/lib/features/wordsSlice";
+import { selectIsReadOnly } from "@/lib/features/controlsSlice";
 import { useAppSelector } from "@/lib/hooks";
-import useShuffleWords from "@/hooks/use-shuffle-words/useShuffleWords";
 import Word from './word/Word';
-import { selectIsReadOnly } from "@/lib/features/controlSlice";
+import useShuffleWords from "@/hooks/use-shuffle-words/useShuffleWords";
 import styles from './Words.module.css';
 
 function Words() {
-  
+
   useShuffleWords();
 
   const ids = useAppSelector(selectIds);
@@ -16,7 +16,8 @@ function Words() {
 
   return (
     <section className={`${styles.words}${isReadOnly ? ' ' + styles['typed-words'] : ''}`}>
-      {ids.map(id => <Word id={id} key={id} />)}
+      {ids.map(id =>
+      <Word id={id} key={id} />)}
     </section>
   );
 

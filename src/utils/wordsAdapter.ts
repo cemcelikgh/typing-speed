@@ -1,4 +1,6 @@
-import { Word } from "@/types/types";
 import { createEntityAdapter } from "@reduxjs/toolkit";
+import { Word } from "@/types/types";
 
-export const wordsAdapter = createEntityAdapter<Word>();
+const wordsAdapter = createEntityAdapter<Word>();
+
+export default wordsAdapter;

@@ -1,9 +1,7 @@
-import { createSlice, PayloadAction }
-  from "@reduxjs/toolkit";
+import { createSlice, EntityState, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../store";
-import type { EntityState } from "@reduxjs/toolkit";
-import { wordsAdapter } from "@/utils/wordsAdapter";
 import { Word } from "@/types/types";
+import wordsAdapter from "@/utils/wordsAdapter";
 import wordStyles from '@/components/words/word/Word.module.css';
 
 interface WordStatus {
@@ -17,33 +15,29 @@ const wordsSlice = createSlice({
   name: 'words',
   initialState,
   reducers: {
-    setWords:
-      (_state, action: PayloadAction<EntityState<Word, string>>) => {
-        return action.payload;
-      },
+    setWords: (_state, action: PayloadAction<EntityState<Word, string>>) => action.payload,
     setWord: (state, action: PayloadAction<WordStatus>) => {
       state.entities[action.payload.id].status = action.payload.status;
     },
     setRemainedWords: state => {
-      const remainedWords = state.ids.reduce<Word[]>((acc, id) => {
-        const entity = state.entities[id];
-        const status = entity.status;
-        if (status !== wordStyles['in-line']) {
-          acc.push({
-            ...entity,
-            display: status !== wordStyles.focused ? false : true,
-          });
-        } else acc.push(entity);
-        return acc;
-      }, []);
+      const remainedWords = state.ids.map(id => {
+        const word = state.entities[id];
+        const wordStatus = word.status;
+        if (wordStatus !== wordStyles['in-line']) {
+          return {
+            ...word,
+            display: wordStatus === wordStyles.focused,
+          };
+        } else return word;
+      });
       wordsAdapter.setAll(state, remainedWords);
     },
     setCompletedWords: state => {
       const completedWords = state.ids.reduce<Word[]>((acc, id) => {
-        const entity = state.entities[id];
-        if (entity.status !== wordStyles['in-line']) {
+        const word = state.entities[id];
+        if (word.status !== wordStyles['in-line']) {
           acc.push({
-            ...entity,
+            ...word,
             display: true,
           });
         }
@@ -55,6 +49,8 @@ const wordsSlice = createSlice({
 });
 
 export const { setWords, setWord, setCompletedWords, setRemainedWords } = wordsSlice.actions;
+
 export const selectIds = (state: RootState) => state.words.ids;
-export const selectEntities = (state: RootState) => state.words.entities;
+export const selectWord = (id: string) => (state: RootState) => state.words.entities[id];
+
 export default wordsSlice.reducer;

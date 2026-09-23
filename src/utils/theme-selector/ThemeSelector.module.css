@@ -53,15 +53,15 @@
 .switch-icon {
   width: 16rem;
   height: 16rem;
-  fill: var(--theme-selector-icon);
+  fill: var(--switch-icon);
 }
 
 input:checked + .switch-icon {
-  fill: var(--selected-theme-selector-icon);
+  fill: var(--checked-switch);
 }
 
 .switch:has(input:checked) {
-  background-color: var(--theme-selector-icon-circle-background);
+  background-color: var(--checked-switch-bg);
 }
 
 .option {

@@ -1,7 +1,6 @@
 next
 <br>react
 <br>react-dom
-<br>react-scripts
 <br>May 2026
 <br><https://nextjs.org/docs/app/getting-started/installation>
 

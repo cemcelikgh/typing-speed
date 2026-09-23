@@ -10,7 +10,7 @@
 }
 
 .focused {
-  background-color: var(--focused-word-background);
+  background-color: var(--focused-word-bg);
 }
 
 .word.success {
@@ -18,7 +18,7 @@
 }
 
 .word.inc-suc {
-  color: var(--partially-correct-word);
+  color: var(--incomplete-correct-word);
 }
 
 .word.failure {
@@ -26,7 +26,7 @@
 }
 
 .word.inc-fai {
-  color: var(--partially-incorrect-word);
+  color: var(--incomplete-incorrect-word);
 }
 
 .word.no-disp {

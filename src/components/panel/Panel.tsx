@@ -4,7 +4,6 @@ import Typing from "./typing/Typing";
 import styles from './Panel.module.css';
 
 function Panel() {
-
   return (
     <section className={styles.panel}>
       <Typing />
@@ -12,7 +11,6 @@ function Panel() {
       <Reset />
     </section>
   );
-
 }
 
 export default Panel;

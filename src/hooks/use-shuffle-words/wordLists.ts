@@ -1,4 +1,4 @@
-const wordList = {
+const wordLists = {
   english: [
     "about",
     "after",
@@ -405,4 +405,4 @@ const wordList = {
   ],
 }
 
-export default wordList;
+export default wordLists;

@@ -1,5 +1,5 @@
-import ThemeSelector from "@/utils/theme-selector/ThemeSelector";
 import LanguageSelector from "./language-selector/LanguageSelector";
+import ThemeSelector from "@/utils/theme-selector/ThemeSelector";
 import styles from './Selectors.module.css';
 
 function Selectors() {

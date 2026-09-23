@@ -1,16 +1,16 @@
 import { configureStore } from "@reduxjs/toolkit";
-import wordsReducer from "./features/wordsSlice";
+import controlsReducer from "./features/controlsSlice";
 import languageReducer from "./features/languageSlice";
-import controlReducer from "./features/controlSlice";
 import resultsReducer from "./features/resultsSlice";
 import themeReducer from "./features/themeSlice";
+import wordsReducer from "./features/wordsSlice";
 
 export const makeStore = () => {
   return configureStore({
     reducer: {
       language: languageReducer,
       words: wordsReducer,
-      control: controlReducer,
+      controls: controlsReducer,
       results: resultsReducer,
       theme: themeReducer,
     },

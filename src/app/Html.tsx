@@ -11,22 +11,33 @@ function Html({
   children: React.ReactNode;
 }>) {
 
-  const language = useAppSelector(selectLanguage);
-  const lang = language === 'english' ? 'en' : 'tr';
-  const titles = { en: 'Typing Speed', tr: 'Tuşlama Hızı' }
-  const title = titles[lang];
   const theme = useAppSelector(selectTheme);
+  const language = useAppSelector(selectLanguage);
+
+  const titles = { en: 'Typing Speed', tr: 'Tuşlama Hızı' };
+  const lang = language === 'english' ? 'en' : 'tr';
+  const title = titles[lang];
 
   return (
-    <html lang={lang} className={theme} style={{colorScheme: theme}}>
+    <html
+      lang={lang}
+      className={theme}
+      style={{ colorScheme: theme }}
+    >
       <head>
         <title>{title}</title>
         {theme &&
-        <link rel="icon" href={`/images/theme-icons/${theme}-keyboard.svg`} type="image/svg+xml" />}
+        <link
+          rel="icon"
+          href={`/theme-icons/${theme}-keyboard.svg`}
+          type="image/svg+xml"
+        />}
       </head>
       <body>
         <main className={styles.main}>
-          <h1 className={styles.heading}>{title}</h1>
+          <h1 className={styles.heading}>
+            {title}
+          </h1>
           {children}
         </main>
       </body>

@@ -6,7 +6,7 @@
   color: var(--foreground);
   appearance: none;
   border: var(--tool-panel-borders);
-  background-color: var(--focused-word-background);
+  background-color: var(--focused-word-bg);
 }
 
 .typing-input:focus-visible {

@@ -1,16 +1,16 @@
 'use client';
 
+import { nanoid } from "@reduxjs/toolkit";
 import { selectLanguage } from "@/lib/features/languageSlice";
-import wordLists from "@/hooks/use-shuffle-words/wordLists";
+import { selectReset } from "@/lib/features/controlsSlice";
 import { setWords } from "@/lib/features/wordsSlice";
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
-import { nanoid } from "@reduxjs/toolkit";
 import { useEffect } from "react";
-import { selectReset } from "@/lib/features/controlSlice";
-import { wordsAdapter } from "@/utils/wordsAdapter";
+import wordsAdapter from "@/utils/wordsAdapter";
+import wordLists from "@/hooks/use-shuffle-words/wordLists";
 import wordStyles from '@/components/words/word/Word.module.css';
 
-//  Fisher-Yates algorithm
+// Fisher-Yates algorithm
 function shuffle(words: string[]) {
   const arr = [...words];
   for (let i = arr.length - 1; i > 0; i--) {
@@ -21,20 +21,16 @@ function shuffle(words: string[]) {
 }
 
 function shuffleWords(words: string[]) {
-  const arr1 = shuffle(words);
-  const arr2 = shuffle(words);
-  return [...arr1, ...arr2];
+  return [...shuffle(words), ...shuffle(words)];
 }
 
 function generateWords(shuffledWords: string[]) {
-  return shuffledWords.map((word, index) => (
-    {
-      word,
-      id: nanoid(),
-      status: index === 0 ? wordStyles.focused : wordStyles['in-line'],
-      display: true,
-    }
-  ));
+  return shuffledWords.map((word, index) => ({
+    word,
+    id: nanoid(),
+    status: index === 0 ? wordStyles.focused : wordStyles['in-line'],
+    display: true,
+  }));
 }
 
 function useShuffleWords() {
@@ -44,7 +40,6 @@ function useShuffleWords() {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    if (reset === true) return;
     const selectedWords = wordLists[language];
     const shuffledWords = shuffleWords(selectedWords);
     const words = generateWords(shuffledWords);
