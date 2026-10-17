@@ -16,6 +16,11 @@ typescript
 <br>May 2026
 <br><https://www.typescriptlang.org/download/>
 
+eslint
+<br>eslint-config-next
+<br>May 2026
+<br><https://eslint.org/docs/latest/use/getting-started>
+
 Inspiration project
 <br>Apr 2026
 <br><https://10fastfingers.com/typing-test/>
