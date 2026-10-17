@@ -1,12 +1,12 @@
 .main {
-  margin: 0 auto;
   width: 720rem;
+  margin: 0 auto;
+  padding: 50rem 0 10rem;
   color: var(--foreground);
   background: var(--background);
 }
 
 .heading {
-  margin: 50rem auto;
   text-align: center;
   font-size: 36rem;
 }

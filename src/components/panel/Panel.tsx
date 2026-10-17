@@ -1,10 +1,9 @@
 import Reset from "./reset/Reset";
-import Timer from "./timer/Timer";
+import Timer from "./timer/TimerResetter";
 import Typing from "./typing/Typing";
 import styles from './Panel.module.css';
 
 function Panel() {
-
   return (
     <section className={styles.panel}>
       <Typing />
@@ -12,7 +11,6 @@ function Panel() {
       <Reset />
     </section>
   );
-
 }
 
 export default Panel;

@@ -1,4 +1,5 @@
 .selectors {
+  margin-top: 50rem;
   padding: 5rem 20rem;
   border: var(--container-borders);
   display: flex;

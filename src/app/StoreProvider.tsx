@@ -1,9 +1,10 @@
 'use client';
 
-import Html from "./Html";
-import { useRef } from "react";
+import type { AppStore } from "@/lib/store";
+import { makeStore } from "@/lib/store";
 import { Provider } from "react-redux";
-import { AppStore, makeStore } from "@/lib/store";
+import { useRef } from "react";
+import Html from "./Html";
 
 function StoreProvider({
   children,

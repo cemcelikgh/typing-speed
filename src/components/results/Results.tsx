@@ -1,6 +1,6 @@
 'use client';
 
-import { selectIsReadOnly } from "@/lib/features/controlSlice";
+import { selectIsReadOnly } from "@/lib/features/controlsSlice";
 import { selectLanguage } from "@/lib/features/languageSlice";
 import { selectResults } from "@/lib/features/resultsSlice";
 import { useAppSelector } from "@/lib/hooks";
@@ -11,7 +11,8 @@ function Results() {
   const isReadOnly = useAppSelector(selectIsReadOnly);
   const results = useAppSelector(selectResults);
   const lang = useAppSelector(selectLanguage);
-  const isEn = lang === 'english' ? true : false;
+
+  const isEn = lang === 'english';
   const effKey = results.effectiveKeystrokes;
   const wpm = Math.round(effKey / 5);
 
